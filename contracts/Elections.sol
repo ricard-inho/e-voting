@@ -1,4 +1,4 @@
-pragma solidity 0.5.1;
+pragma solidity ^0.5.1;
 
 contract Elections {
 
@@ -20,7 +20,8 @@ contract Elections {
 		uint voteCount;
 	}
 
-	address chairPerson;
+
+	address public chairPerson;
 	mapping(address => Voter) public voters;
 	Election[] public elections;
 
@@ -45,5 +46,24 @@ contract Elections {
 
 		sender.voted = true;
 		elections[_election].proposals[_proposal].voteCount += 1;
+	}
+
+
+	/**
+	* @dev Set the opening time of the election
+	* @param _election index of election to set the time
+	* @param _openingTime time to open the election
+	*/
+	function setOpeningTime(uint _election, uint256 _openingTime) public onlyChairPerson {
+		elections[_election].openingTime = _openingTime;
+	}
+
+	/**
+	* @dev Set the closing time of the election
+	* @param _election index of election to set the time
+	* @param _closingTime time to close the election
+	*/
+	function setClosingTime(uint _election, uint256 _closingTime) public onlyChairPerson {
+		elections[_election].closingTime = _closingTime;
 	}
 }
