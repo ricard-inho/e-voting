@@ -1,4 +1,5 @@
-# E-voting
+# E-voting 
+[![GitHub license](https://img.shields.io/github/license/ricardmarsalcastan/e-voting?color=red)](https://github.com/ricardmarsalcastan/e-voting/blob/master/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/ricardmarsalcastan/e-voting)](https://github.com/ricardmarsalcastan/e-voting/issues) 
 Decentralized elections voting app
 
 ## Contributing
